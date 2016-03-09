@@ -21,6 +21,16 @@ class StartScreenViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+//    override func prepareForSegue(segue: UIStoryboardSegue,sender:AnyObject?){
+//        
+//        if segue.identifier == "goToViewB” {
+//        let nav =
+//            segue.destinationViewController as! UINavigationViewController
+//        let targetVC = nav.viewControllers.first as! BViewController
+//        targetVC.someValue = self.someValue
+//    }
+
+ 
 
     /*
     // MARK: - Navigation

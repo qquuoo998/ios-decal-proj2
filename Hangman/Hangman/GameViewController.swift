@@ -8,15 +8,36 @@
 
 import UIKit
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController, UITextFieldDelegate {
 
+    var hangmanStateImages = [UIImage]()
+    var curImage = 1
+    var hangmanGame: Hangman!
+    
+//    @IBOutlet var guessLetterTextField: UITextField!
+//    @IBOutlet var guessedLettersLabel: UILabel!
+//    @IBOutlet var hangmanImageView: UIImageView!
+//    @IBOutlet var newGameButton: UIButton!
+//    @IBOutlet var guessLetterButton: UIButton!
+//    @IBOutlet var answerLabel: UILabel!
+    
+    @IBAction func newGameButtonPressed(sender: UIButton) {
+        hangmanGame.begin()
+        guessedLettersLabel.text = ""
+        answerLabel.text = hangmanGame.knownString!
+        curImage = 1
+        for i in 0...6 {
+            hangmanStateImages.append(UIImage(named: "hangman\(i + 1)")!)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let hangmanPhrases = HangmanPhrases()
-        var phrase = hangmanPhrases.getRandomPhrase()
-        print(phrase)
+        hangmanGame = Hangman()
+        guessLetterTextField.delegate = self
+        self.newGameButtonPressed(newGameButton)
     }
 
     override func didReceiveMemoryWarning() {
