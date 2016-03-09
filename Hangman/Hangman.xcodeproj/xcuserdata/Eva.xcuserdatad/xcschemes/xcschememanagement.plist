@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>ToDoListApp.xcscheme</key>
+		<key>Hangman.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +12,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>A680091B1C855E8A00D8D439</key>
+		<key>ECC22F3E1C89177600749E58</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ECC22F521C89177600749E58</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ECC22F5D1C89177600749E58</key>
 		<dict>
 			<key>primary</key>
 			<true/>

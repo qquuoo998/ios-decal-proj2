@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A680091B1C855E8A00D8D439"
-               BuildableName = "ToDoListApp.app"
-               BlueprintName = "ToDoListApp"
-               ReferencedContainer = "container:ToDoListApp.xcodeproj">
+               BlueprintIdentifier = "ECC22F3E1C89177600749E58"
+               BuildableName = "Hangman.app"
+               BlueprintName = "Hangman"
+               ReferencedContainer = "container:Hangman.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,14 +28,34 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "ECC22F521C89177600749E58"
+               BuildableName = "HangmanTests.xctest"
+               BlueprintName = "HangmanTests"
+               ReferencedContainer = "container:Hangman.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "ECC22F5D1C89177600749E58"
+               BuildableName = "HangmanUITests.xctest"
+               BlueprintName = "HangmanUITests"
+               ReferencedContainer = "container:Hangman.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A680091B1C855E8A00D8D439"
-            BuildableName = "ToDoListApp.app"
-            BlueprintName = "ToDoListApp"
-            ReferencedContainer = "container:ToDoListApp.xcodeproj">
+            BlueprintIdentifier = "ECC22F3E1C89177600749E58"
+            BuildableName = "Hangman.app"
+            BlueprintName = "Hangman"
+            ReferencedContainer = "container:Hangman.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +75,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A680091B1C855E8A00D8D439"
-            BuildableName = "ToDoListApp.app"
-            BlueprintName = "ToDoListApp"
-            ReferencedContainer = "container:ToDoListApp.xcodeproj">
+            BlueprintIdentifier = "ECC22F3E1C89177600749E58"
+            BuildableName = "Hangman.app"
+            BlueprintName = "Hangman"
+            ReferencedContainer = "container:Hangman.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +94,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A680091B1C855E8A00D8D439"
-            BuildableName = "ToDoListApp.app"
-            BlueprintName = "ToDoListApp"
-            ReferencedContainer = "container:ToDoListApp.xcodeproj">
+            BlueprintIdentifier = "ECC22F3E1C89177600749E58"
+            BuildableName = "Hangman.app"
+            BlueprintName = "Hangman"
+            ReferencedContainer = "container:Hangman.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

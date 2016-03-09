@@ -7,6 +7,7 @@
 //
 
 import Foundation
+//import UIKit
 
 class Hangman {
     var phrases: HangmanPhrases!
@@ -14,18 +15,41 @@ class Hangman {
     var guessed: NSMutableArray?
     var keyString: String?
     var images: [String]
+    var curImageIndex: Int
     
     init() {
         phrases = HangmanPhrases()
         images = [String]()
-        for index in 1...7 {
-            images.append("hangman\(index)")
+        for index in 0...6 {
+            images.append("hangman\(index+1)")
         }
+        curImageIndex = 1
+        guessed = NSMutableArray()
     }
     
     func begin() {
         let key = phrases.getRandomPhrase()
+        print("got a new key: " + key)
         keyString = key
+        assignNewPhrase(key)
+        curImageIndex = 1
+    }
+    
+    func restart() {
+        let key = keyString!
+        curImageIndex = 1
+        assignNewPhrase(key)
+    }
+    
+    func ifLost() -> Bool {
+        return curImageIndex == 6
+    }
+    
+    func getCurPicName() -> String {
+        return images[curImageIndex]
+    }
+    
+    func assignNewPhrase(key: String!) {
         knownString = ""
         var counter = 0
         for (; counter < keyString!.characters.count; counter++) {
@@ -43,6 +67,8 @@ class Hangman {
             return true
         }
         guessed!.addObject(letter)
+        print("ifGuess: guessed= " + guesses())
+        
         var str = Array(keyString!.characters)
         var counter = 0
         var result = false
@@ -53,17 +79,19 @@ class Hangman {
                     + "\((knownString! as NSString).substringFromIndex(counter+1))"
             }
         }
+        curImageIndex += (result ? 0:1)
+        print("ifGuess: result = ",result, " knowstring = ", knownString)
+        print("ifGuess: curimageindex = ", curImageIndex)
         return result
     }
     
     func guesses() -> String {
-        if guessed!.count == 0 {
-            return ""
-        }
         var result: String!
         result = ""
-        for (var i = 0; i < guessed!.count; i += 1) {
-            result = result + ", \(guessed?.objectAtIndex(i))"
+        var i = 0
+        print(guessed!.count)
+        for (; i < guessed!.count; i += 1) {
+            result = result + "\(guessed!.objectAtIndex(i)) "
         }
         return result
     }

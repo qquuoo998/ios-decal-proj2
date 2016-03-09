@@ -8,44 +8,88 @@
 
 import UIKit
 
-class GameViewController: UIViewController, UITextFieldDelegate {
+class GameViewController: UIViewController {
 
-    var hangmanStateImages = [UIImage]()
-    var curImage = 1
+    var statesImages = [UIImage]()
     var hangmanGame: Hangman!
     
-//    @IBOutlet var guessLetterTextField: UITextField!
-//    @IBOutlet var guessedLettersLabel: UILabel!
-//    @IBOutlet var hangmanImageView: UIImageView!
-//    @IBOutlet var newGameButton: UIButton!
-//    @IBOutlet var guessLetterButton: UIButton!
-//    @IBOutlet var answerLabel: UILabel!
-    
-    @IBAction func newGameButtonPressed(sender: UIButton) {
+    @IBOutlet var knownLabel: UILabel!
+    @IBOutlet var statesImageView: UIImageView!
+    @IBOutlet var guessedLabel: UILabel!
+    @IBOutlet var inputTextField: UITextField!
+    @IBOutlet var newGameButton: UIBarButtonItem!
+    @IBOutlet var restartButton: UIBarButtonItem!
+    @IBOutlet var guessButton: UIButton!
+
+
+    @IBAction func newGameButtonPressed(sender: UIBarButtonItem) {
         hangmanGame.begin()
-        guessedLettersLabel.text = ""
-        answerLabel.text = hangmanGame.knownString!
-        curImage = 1
-        for i in 0...6 {
-            hangmanStateImages.append(UIImage(named: "hangman\(i + 1)")!)
+        resetPara()
+    }
+
+    @IBAction func restartButtonPressed(sender: UIBarButtonItem) {
+        hangmanGame.restart()
+        resetPara()
+    }
+
+    func resetPara() {
+        guessedLabel.text = ""
+        knownLabel.text = hangmanGame.knownString!
+        statesImageView.image = UIImage(named: hangmanGame.getCurPicName())
+        inputTextField.text = ""
+        statesImageView.image = UIImage(named: hangmanGame.getCurPicName() + ".gif")
+    }
+
+    @IBAction func guessButton(sender: UIButton) {
+        let letter = (inputTextField.text)!.uppercaseString
+        let alert = UIAlertView()
+        alert.title = "Alert"
+
+        if (letter.characters.count != 1) || letter < "A" || letter > "Z" {
+            alert.message = "Please only enter one letter!"
+            alert.addButtonWithTitle("Try again")
+            alert.show()
+        } else {
+            let result = hangmanGame.ifGuessed(letter)
+            print("known: " + hangmanGame.knownString!)
+            knownLabel.text = hangmanGame.knownString!
+            print("Guess: " + hangmanGame.guesses())
+            guessedLabel.text = hangmanGame.guesses()
+            print("name: ", hangmanGame.getCurPicName())
+            statesImageView.image = UIImage(named: hangmanGame.getCurPicName() + ".gif")
+            if result {
+                if (hangmanGame.knownString == hangmanGame.keyString) {
+                    alert.message = "You Win!"
+                    alert.addButtonWithTitle("New Game")
+                    alert.show()
+                    self.newGameButtonPressed(newGameButton)
+                }
+            } else if hangmanGame.ifLost() {
+                alert.message = "You Lost!"
+                alert.addButtonWithTitle("Restart")
+                alert.show()
+                self.restartButtonPressed(restartButton)
+            }
         }
+        inputTextField.text = ""
+        
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        hangmanGame = Hangman()
-        guessLetterTextField.delegate = self
-        self.newGameButtonPressed(newGameButton)
-    }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        hangmanGame = Hangman()
+        self.newGameButtonPressed(newGameButton)
+    }
+    
+    
     /*
     // MARK: - Navigation
 
