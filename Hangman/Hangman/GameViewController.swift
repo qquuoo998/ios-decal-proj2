@@ -51,11 +51,8 @@ class GameViewController: UIViewController {
             alert.show()
         } else {
             let result = hangmanGame.ifGuessed(letter)
-            print("known: " + hangmanGame.knownString!)
             knownLabel.text = spaceOutString(hangmanGame.knownString!)
-            print("Guess: " + hangmanGame.guesses())
             guessedLabel.text = hangmanGame.guesses()
-            print("name: ", hangmanGame.getCurPicName())
             statesImageView.image = UIImage(named: hangmanGame.getCurPicName() + ".gif")
             if result {
                 if (hangmanGame.knownString == hangmanGame.keyString) {

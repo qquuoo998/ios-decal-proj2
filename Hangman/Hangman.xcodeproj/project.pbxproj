@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A666C35D1C8FF72C006149D5 /* Hangman.swift in Sources */ = {isa = PBXBuildFile; fileRef = A666C35C1C8FF72C006149D5 /* Hangman.swift */; };
+		A6C460AC1C92871700C3944D /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A6C460AB1C92871700C3944D /* icon.png */; };
 		EC93104C1C891F2C00BE736C /* hangman1.gif in Resources */ = {isa = PBXBuildFile; fileRef = EC9310451C891F2C00BE736C /* hangman1.gif */; };
 		EC93104D1C891F2C00BE736C /* hangman2.gif in Resources */ = {isa = PBXBuildFile; fileRef = EC9310461C891F2C00BE736C /* hangman2.gif */; };
 		EC93104E1C891F2C00BE736C /* hangman3.gif in Resources */ = {isa = PBXBuildFile; fileRef = EC9310471C891F2C00BE736C /* hangman3.gif */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		A666C35C1C8FF72C006149D5 /* Hangman.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hangman.swift; sourceTree = "<group>"; };
+		A6C460AB1C92871700C3944D /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		EC9310451C891F2C00BE736C /* hangman1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = hangman1.gif; path = "basic-hangman-img/hangman1.gif"; sourceTree = "<group>"; };
 		EC9310461C891F2C00BE736C /* hangman2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = hangman2.gif; path = "basic-hangman-img/hangman2.gif"; sourceTree = "<group>"; };
 		EC9310471C891F2C00BE736C /* hangman3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = hangman3.gif; path = "basic-hangman-img/hangman3.gif"; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 		ECC22F411C89177600749E58 /* Hangman */ = {
 			isa = PBXGroup;
 			children = (
+				A6C460AB1C92871700C3944D /* icon.png */,
 				ECC22F741C8917FF00749E58 /* Model */,
 				ECC22F731C8917DC00749E58 /* View */,
 				ECC22F721C8917D300749E58 /* Controller */,
@@ -302,6 +305,7 @@
 				ECC22F4A1C89177600749E58 /* Assets.xcassets in Resources */,
 				EC9310521C891F2C00BE736C /* hangman7.gif in Resources */,
 				ECC22F481C89177600749E58 /* Main.storyboard in Resources */,
+				A6C460AC1C92871700C3944D /* icon.png in Resources */,
 				EC93104F1C891F2C00BE736C /* hangman4.gif in Resources */,
 				EC93104C1C891F2C00BE736C /* hangman1.gif in Resources */,
 				EC9310501C891F2C00BE736C /* hangman5.gif in Resources */,
@@ -476,7 +480,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Hangman/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shawndsouza.Hangman;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -488,7 +492,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Hangman/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shawndsouza.Hangman;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -500,8 +504,9 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = HangmanTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.shawndsouza.HangmanTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hangman.app/Hangman";
@@ -513,8 +518,9 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = HangmanTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.shawndsouza.HangmanTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hangman.app/Hangman";
@@ -525,7 +531,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = HangmanUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shawndsouza.HangmanUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -538,7 +544,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = HangmanUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shawndsouza.HangmanUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -67,7 +67,6 @@ class Hangman {
             return true
         }
         guessed!.addObject(letter)
-        print("ifGuess: guessed= " + guesses())
         
         var str = Array(keyString!.characters)
         var counter = 0
@@ -80,8 +79,6 @@ class Hangman {
             }
         }
         curImageIndex += (result ? 0:1)
-        print("ifGuess: result = ",result, " knowstring = ", knownString)
-        print("ifGuess: curimageindex = ", curImageIndex)
         return result
     }
     
@@ -89,7 +86,6 @@ class Hangman {
         var result: String!
         result = ""
         var i = 0
-        print(guessed!.count)
         for (; i < guessed!.count; i += 1) {
             result = result + "\(guessed!.objectAtIndex(i)) "
         }
