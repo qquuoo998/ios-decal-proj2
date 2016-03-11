@@ -34,7 +34,7 @@ class GameViewController: UIViewController {
 
     func resetPara() {
         guessedLabel.text = ""
-        knownLabel.text = hangmanGame.knownString!
+        knownLabel.text = spaceOutString(hangmanGame.knownString!)
         statesImageView.image = UIImage(named: hangmanGame.getCurPicName())
         inputTextField.text = ""
         statesImageView.image = UIImage(named: hangmanGame.getCurPicName() + ".gif")
@@ -52,7 +52,7 @@ class GameViewController: UIViewController {
         } else {
             let result = hangmanGame.ifGuessed(letter)
             print("known: " + hangmanGame.knownString!)
-            knownLabel.text = hangmanGame.knownString!
+            knownLabel.text = spaceOutString(hangmanGame.knownString!)
             print("Guess: " + hangmanGame.guesses())
             guessedLabel.text = hangmanGame.guesses()
             print("name: ", hangmanGame.getCurPicName())
@@ -89,6 +89,15 @@ class GameViewController: UIViewController {
         self.newGameButtonPressed(newGameButton)
     }
     
+    func spaceOutString(label: String) -> String {
+        var count = label.characters.count
+        var result = ""
+        while (count > 0) {
+            result = " " + String(label[label.startIndex.advancedBy(count-1)]) + result
+            count--
+        }
+        return result
+    }
     
     /*
     // MARK: - Navigation
